@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario web</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <div id="contenedor">
+        <form method="GET" action="" enctype="multipart/form-data">   <!--/*solo si se quieren adjuntar archivos */-->
+            <p>
+                <label for="id">Id</label><br>
+                <input type="text" name="id" id="id" class="caja"
+                value="15" readonly>
+            </p>
+            <p>
+                <label for="nombre">Nombre(s)</label><br>
+                <input type="text" name="nombre" id="nombre" placeholder="Escriba su nombre (s)"
+                    size="50" autofocus required class="caja" 
+                pattern="^[A-Za-z ]+$" 
+                title="Solo se permiten letras mayusculas, minusculas y espacio">
+                
+            </p>
+            <p>
+                <label for="apellidos">Apellidos</label><br>
+                <input type="text" name="apellidos" id="apellidos" placeholder="Escriba sus apellidos"
+                    size="70" required class="caja">
+            </p>
+            <p>
+                <input type="hidden" name="clave" id="clave" value="12345" class="caja">
+            </p>
+            <p>
+                <label for="contraseña">Contraseña</label><br>
+                <input type="password" name="contraseña" id="contraseña" placeholder="Escriba sus contraseña"
+                    size="50" required class="caja">
+            </p>
+            
+            <p>
+                <select name="estado" id="estado" required class="caja">
+                    <option value="">Seleccione...</option>
+                    <option value="1">Aguascalientes</option>
+                    <option value="2">Estado de México</option>
+                    <option value="3">Oaxaca</option>
+
+                </select>
+            </p>
+            <p>
+                <label>Seleccione</label><br>
+                <select name="lenguaje" id="lenguaje" class="caja listaMultiple" multiple required>
+                    <option value="html">html</option>
+                    <option value="java">java</option>
+                    <option value="javascript">javascript</option>
+
+                </select>
+            </p>
+            <p>
+                <label for="adjuntar">Adjuntar archivo</label><br>
+                <input type="file" name="adjuntar" id="adjuntar" value="Seleccionar su archivo" class="caja" multiple >
+            </p>
+            <p>
+                <label for="correo">Correo Electronico</label><br>
+                <input type="email" name="correo" id="correo" required class="caja" placeholder="Escriba su correo">
+            </p>
+            <p>
+                <label for="fecha">Seleccione fecha</label><br>
+                <input type="date" name="fecha" id="fecha" class="caja" required>
+            </p>
+            <p>
+                <label for="edad">Su edad</label><br>
+                <input type="number" name="edad" id="edad" required class="caja"
+                min="10" max="100" step="10">
+            </p>
+            <!--elementos de radio-->
+            <p>
+                <label for="genero">Genero</label><br>
+                <input type="radio" name="sexo" id="sexo" value="F" checked required>Femenino<br>
+                <input type="radio" name="sexo" id="sexo" value="M" required>Masculino<br>
+                
+            </p>
+            <p>
+                <label for="so">Sistemas Operativos</label><br>
+                <input type="checkbox" name="linux" id="linux" value="linux">Linux<br>
+                <input type="checkbox" name="mac" id="mac" value="macos">Macos<br>
+                <input type="checkbox" name="windows" id="windows" value="windows" checked>Windows<br>
+                <input type="checkbox" name="androi" id="andoi" value="andoi">Androi<br>
+            </p>
+<!--Interactuar con la aplicacion mediante acciones-->
+            <p>
+                <button class="boton" name="eliminar" id="eliminar" onclick="eliminar()">Eliminar</button>
+                <button class="boton" name="modificar" id="modificar" ondblclick="modificar()">Modificar</button>
+                <button class="boton" name="consultar" id="consultar" onmouseover="consultar()">Consultar</button>
+                
+            </p>
+            <p>
+                <input type="reset" value="Limpiar formulario" class="boton">
+            </p>
+
+
+            <p>
+
+                <input type="submit" name="remitir" value="Enviar Informacion" class="boton">
+            </p>
+
+
+
+        </form>
+
+
+
+    </div>
+    
+</body>
+</html>
